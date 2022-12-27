@@ -21,7 +21,6 @@ const secret = "Thisisourlittlesecret" //used to encrypt the password
 userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password']})
 
 const user = new mongoose.model("User", userSchema)
-mongoose.set('strictQuery', true);
 
 app.get("/", function(req, res){
     res.render("home")
